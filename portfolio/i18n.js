@@ -7,7 +7,7 @@
     // nav / chrome
     nav_about: 'About', nav_xp: 'Experience', nav_projects: 'Projects',
     nav_stack: 'Stack', nav_contact: 'Get in touch',
-    cta_projects: 'View my projects', cta_cv: 'Download CV',
+    cta_projects: 'View my projects', cta_cv: 'Download CV', cta_cv_view: 'View online ↗',
 
     // hero
     hero_status: 'Available · Freelance · Paris, France',

@@ -1003,7 +1003,13 @@ body::before {
 .btn:hover .ic { transform: translateY(2px); }
 .btn-primary { background: var(--accent); color: var(--accent-fg); border-color: var(--accent); }
 .btn-primary:hover { color: var(--accent-fg); filter: brightness(1.08); }
-.hero-cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: clamp(34px, 5vw, 56px); }
+.hero-cta { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin-top: clamp(34px, 5vw, 56px); }
+.cv-view {
+  font-family: var(--font-mono); font-size: 12px; letter-spacing: .06em;
+  color: var(--muted); border-bottom: 1px solid var(--line); padding-bottom: 2px;
+  transition: color .2s, border-color .2s;
+}
+.cv-view:hover { color: var(--accent); border-color: var(--accent); }
 .contact-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 40px; }
 
 /* =========================================================
