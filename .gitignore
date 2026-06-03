@@ -1,0 +1,8 @@
+# macOS
+.DS_Store
+
+# Fichiers non nécessaires au site
+uploads/
+screenshots/
+mockups/
+CV.html

@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark" data-density="comfortable" data-effects="full" data-bg="grid" data-cards="bordered" data-cursor="glow" data-grain="on" data-headings="default" data-bodyfont="grotesk" data-radius="sharp">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Mohamed Anes El Marzouki — Développeur Full-Stack & Lead</title>
+<meta name="description" content="Mohamed Anes El Marzouki — Développeur Full-Stack & Lead à Paris. Conception et livraison d'applications web & mobiles : TypeScript, React/Next.js, NestJS, Flutter, DevOps. De l'architecture au déploiement." />
+<meta name="author" content="Mohamed Anes El Marzouki" />
+<meta name="keywords" content="Développeur Full-Stack, Lead Developer, React, Next.js, NestJS, Flutter, TypeScript, DevOps, Paris, Freelance, Portfolio" />
+<meta name="theme-color" content="#0a0a0b" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20100%20100'%3E%3Crect%20width='100'%20height='100'%20rx='22'%20fill='%230a0a0b'/%3E%3Ctext%20x='50'%20y='74'%20font-family='Arial,sans-serif'%20font-size='70'%20font-weight='700'%20fill='%23cdfb45'%20text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E" />
+<!-- Open Graph / social sharing -->
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="fr_FR" />
+<meta property="og:title" content="Mohamed Anes El Marzouki — Développeur Full-Stack & Lead" />
+<meta property="og:description" content="Conception et livraison d'applications web & mobiles, de l'architecture au déploiement. TypeScript · React/Next.js · NestJS · Flutter · DevOps." />
+<meta property="og:image" content="portfolio/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Mohamed Anes El Marzouki — Développeur Full-Stack & Lead" />
+<meta name="twitter:description" content="Applications web & mobiles, de l'architecture au déploiement. TypeScript · React · NestJS · Flutter · DevOps." />
+<meta name="twitter:image" content="portfolio/og-image.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400;1,6..72,500&family=Syne:wght@500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="portfolio/styles.css" />
+</head>
+<body>
+
+<div class="scroll-prog" id="scrollProg"></div>
+<div class="cursor-glow"></div>
+
+<!-- ============ NAV ============ -->
+<nav class="nav" id="nav">
+  <a href="#top" class="brand"><span class="dot"></span>M.A. EL MARZOUKI</a>
+  <div class="nav-right">
+    <div class="nav-links">
+      <a href="#about" data-nav="about" data-i18n="nav_about">À propos</a>
+      <a href="#experience" data-nav="experience" data-i18n="nav_xp">Expériences</a>
+      <a href="#projects" data-nav="projects" data-i18n="nav_projects">Projets</a>
+      <a href="#stack" data-nav="stack" data-i18n="nav_stack">Stack</a>
+      <a href="#contact" class="nav-cta" data-magnetic data-i18n="nav_contact">Me contacter</a>
+    </div>
+    <button class="lang-switch fr" data-lang-toggle aria-label="Changer de langue"><span class="lang-fr">FR</span><span class="sep">/</span><span class="lang-en">EN</span></button>
+    <button class="nav-toggle" id="navToggle" aria-label="Ouvrir le menu" aria-expanded="false"><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- ============ MOBILE MENU ============ -->
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mm-inner">
+    <a href="#about" class="mm-link"><span class="mm-n">01</span><span data-i18n="nav_about">À propos</span></a>
+    <a href="#experience" class="mm-link"><span class="mm-n">02</span><span data-i18n="nav_xp">Expériences</span></a>
+    <a href="#projects" class="mm-link"><span class="mm-n">03</span><span data-i18n="nav_projects">Projets</span></a>
+    <a href="#stack" class="mm-link"><span class="mm-n">04</span><span data-i18n="nav_stack">Stack</span></a>
+    <a href="#contact" class="mm-link"><span class="mm-n">05</span><span data-i18n="nav_contact">Me contacter</span></a>
+    <div class="mm-foot">
+      <a href="portfolio/CV-Mohamed-El-Marzouki.pdf" download class="btn btn-primary"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14"/></svg><span data-i18n="cta_cv">Télécharger le CV</span></a>
+      <a href="https://linkedin.com/in/mohamed-el-marzouki" target="_blank" rel="noopener" class="btn">LinkedIn ↗</a>
+    </div>
+  </div>
+</div>
+
+<!-- ============ DOT NAV ============ -->
+<nav class="dotnav" aria-label="Sections">
+  <a href="#top" data-dot="top" data-label="Accueil"></a>
+  <a href="#about" data-dot="about" data-label="À propos"></a>
+  <a href="#experience" data-dot="experience" data-label="Expériences"></a>
+  <a href="#projects" data-dot="projects" data-label="Projets"></a>
+  <a href="#stack" data-dot="stack" data-label="Stack"></a>
+  <a href="#formation" data-dot="formation" data-label="Formation"></a>
+  <a href="#contact" data-dot="contact" data-label="Contact"></a>
+</nav>
+
+<!-- ============ HERO ============ -->
+<header class="hero" id="top" data-screen-label="Hero">
+  <div class="hero-grid-bg"></div>
+  <div class="hero-aurora"><i></i><i></i><i></i></div>
+  <div class="hero-spot"></div>
+  <canvas class="hero-fx" id="heroFx"></canvas>
+  <div class="hero-glow"></div>
+  <div class="wrap">
+    <div class="hero-status reveal mono"><span class="live"></span><span data-i18n="hero_status">Disponible · Freelance · Paris, Île-de-France</span></div>
+    <h1 class="reveal" style="--d:60ms">
+      <span class="ln">Mohamed</span>
+      <span class="ln">Anes <span class="accent">El&nbsp;Marzouki</span></span>
+    </h1>
+    <div class="hero-foot">
+      <div class="hero-role reveal" style="--d:160ms" data-i18n="hero_role">Développeur Full-Stack · Lead</div>
+      <p class="hero-lead reveal" style="--d:220ms" data-i18n="hero_lead">
+        Je conçois et livre des applications <strong>web &amp; mobiles</strong>, de l'architecture au déploiement — avec le cap fixé sur la <strong>performance</strong>, la <strong>sécurité</strong> et la qualité du code.
+      </p>
+    </div>
+    <div class="hero-cta reveal" style="--d:300ms">
+      <a href="#projects" class="btn btn-primary" data-magnetic data-i18n="cta_projects">Voir mes projets</a>
+      <a href="portfolio/CV-Mohamed-El-Marzouki.pdf" download class="btn" data-i18n="cta_cv"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14"/></svg>Télécharger le CV</a>
+    </div>
+  </div>
+  <div class="scroll-cue"><span>Scroll</span><span class="bar"></span></div>
+</header>
+
+<!-- ============ MARQUEE ============ -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track" id="marquee">
+    <span>TypeScript<span class="star">✦</span></span>
+    <span>React · Next.js<span class="star">✦</span></span>
+    <span>NestJS<span class="star">✦</span></span>
+    <span>Flutter<span class="star">✦</span></span>
+    <span>DevOps<span class="star">✦</span></span>
+    <span>Lead<span class="star">✦</span></span>
+  </div>
+</div>
+
+<!-- ============ STATS BAND ============ -->
+<section class="stats-band" aria-label="Chiffres clés">
+  <div class="wrap">
+    <div class="stat-cell reveal"><div class="n" data-to="4">0<span class="suf">+</span></div><div class="k" data-i18n="stat_years">Années d'expérience</div></div>
+    <div class="stat-cell reveal" style="--d:80ms"><div class="n" data-to="10">0<span class="suf">+</span></div><div class="k" data-i18n="stat_projects">Projets &amp; missions</div></div>
+    <div class="stat-cell reveal" style="--d:160ms"><div class="n" data-to="25">0<span class="suf">+</span></div><div class="k" data-i18n="stat_tech">Technologies</div></div>
+    <div class="stat-cell reveal" style="--d:240ms"><div class="n" data-to="6">0<span class="suf">+</span></div><div class="k" data-i18n="stat_clients">Entreprises &amp; clients</div></div>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section class="section" id="about" data-screen-label="À propos">
+  <span class="ghost" aria-hidden="true">01</span>
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="idx mono">(01)</span>
+      <span class="label mono" data-i18n="sh_about_label">À propos</span>
+    </div>
+    <div class="about-grid">
+      <div class="reveal about-sticky">
+        <div class="about-photo">
+          <image-slot id="portrait" shape="rect" src="portfolio/portrait.jpg" fit="cover" placeholder="Déposez votre photo"></image-slot>
+        </div>
+        <div class="photo-cap"><span>Mohamed Anes</span><span class="av">Paris, FR</span></div>
+        <div class="about-meta">
+          <div class="row"><span data-i18n="about_role_k">Rôle</span><span data-i18n="about_role_v">Full-Stack · Lead</span></div>
+          <div class="row"><span data-i18n="about_base_k">Base</span><span data-i18n="about_base_v">Paris, FR</span></div>
+          <div class="row"><span data-i18n="about_status_k">Statut</span><span data-i18n="about_status_v">Disponible</span></div>
+          <div class="row"><span data-i18n="about_exp_k">Exp.</span><span data-i18n="about_exp_v">4+ ans</span></div>
+        </div>
+      </div>
+      <div class="about-body reveal" style="--d:120ms">
+        <p data-i18n="about_p1">Développeur Full-Stack &amp; Lead à l'aise sur <span class="hl">l'ensemble de la chaîne technique</span> — TypeScript, React/Next.js, NestJS, Flutter — et dans l'encadrement d'équipes.</p>
+        <p class="dim" data-i18n="about_p2">J'interviens de la conception d'architecture jusqu'au déploiement, en gardant le cap sur la performance, la sécurité et la qualité du code.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EXPERIENCE ============ -->
+<section class="section" id="experience" data-screen-label="Expériences">
+  <span class="ghost" aria-hidden="true">02</span>
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="idx mono">(02)</span>
+      <span class="label mono" data-i18n="sh_xp_label">Parcours</span>
+      <h2 data-i18n="sh_xp_title">Expériences</h2>
+    </div>
+    <div class="xp-list">
+
+      <article class="xp reveal">
+        <div class="num">01</div>
+        <div class="xp-main">
+          <div class="xp-top">
+            <h3 class="xp-role" data-i18n="xp1_role">Développeur Full-Stack Web</h3>
+            <span class="xp-date">10/2025 — Auj.</span>
+          </div>
+          <div class="xp-org" data-i18n="xp1_org">Freelance<span class="sep">/</span>Paris</div>
+          <p class="xp-desc" data-i18n="xp1_desc">Conception et développement d'applications web &amp; mobiles Full-Stack avec React, Next.js, NestJS, Django, React Native, Flutter et PostgreSQL.</p>
+          <div class="xp-tags"><span class="tag">React</span><span class="tag">Next.js</span><span class="tag">NestJS</span><span class="tag">Django</span><span class="tag">Flutter</span></div>
+        </div>
+      </article>
+
+      <article class="xp reveal">
+        <div class="num">02</div>
+        <div class="xp-main">
+          <div class="xp-top">
+            <h3 class="xp-role" data-i18n="xp2_role">Lead Developer</h3>
+            <span class="xp-date">04/2025 — 10/2025</span>
+          </div>
+          <div class="xp-org" data-i18n="xp2_org">SoftProces<span class="sep">/</span>Paris</div>
+          <p class="xp-desc" data-i18n="xp2_desc">Développement full-stack TypeScript (React/Next.js · NestJS), gestion PostgreSQL, intégration Docker, revue de code et optimisation performance &amp; sécurité.</p>
+          <div class="xp-tags"><span class="tag">TypeScript</span><span class="tag">Docker</span><span class="tag">PostgreSQL</span><span class="tag">Code Review</span></div>
+        </div>
+      </article>
+
+      <article class="xp reveal">
+        <div class="num">03</div>
+        <div class="xp-main">
+          <div class="xp-top">
+            <h3 class="xp-role" data-i18n="xp3_role">Formateur Web &amp; Mobile</h3>
+            <span class="xp-date">03/2023 — 12/2025</span>
+          </div>
+          <div class="xp-org" data-i18n="xp3_org">Freelance<span class="sep">/</span>Île-de-France</div>
+          <p class="xp-desc" data-i18n="xp3_desc">Encadrement d'étudiants sur les technologies web &amp; mobile, projets pratiques et accompagnement vers l'autonomie professionnelle.</p>
+          <div class="xp-tags"><span class="tag">Mentorat</span><span class="tag">Pédagogie</span><span class="tag">Web</span><span class="tag">Mobile</span></div>
+        </div>
+      </article>
+
+      <article class="xp reveal">
+        <div class="num">04</div>
+        <div class="xp-main">
+          <div class="xp-top">
+            <h3 class="xp-role" data-i18n="xp4_role">Développeur Full-Stack Mobile</h3>
+            <span class="xp-date">01/2023 — 04/2025</span>
+          </div>
+          <div class="xp-org" data-i18n="xp4_org">Eviden / Atos<span class="sep">/</span>Cergy</div>
+          <p class="xp-desc" data-i18n="xp4_desc">Messagerie sécurisée avec Flutter (Dart/Kotlin), développement de plugins Java, intégration backend et scripts logiques en Python.</p>
+          <div class="xp-tags"><span class="tag">Flutter</span><span class="tag">Dart</span><span class="tag">Kotlin</span><span class="tag">Java</span><span class="tag">Python</span></div>
+        </div>
+      </article>
+
+      <article class="xp reveal">
+        <div class="num">05</div>
+        <div class="xp-main">
+          <div class="xp-top">
+            <h3 class="xp-role" data-i18n="xp5_role">Développeur Full-Stack Web</h3>
+            <span class="xp-date">03/2022 — 01/2023</span>
+          </div>
+          <div class="xp-org" data-i18n="xp5_org">Fixers<span class="sep">/</span>Paris</div>
+          <p class="xp-desc" data-i18n="xp5_desc">Création du back-office (Laravel, MySQL), développement d'un chatbot et ajout de fonctionnalités analytiques.</p>
+          <div class="xp-tags"><span class="tag">Laravel</span><span class="tag">MySQL</span><span class="tag">Chatbot</span><span class="tag">Analytics</span></div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROJECTS ============ -->
+<section class="section" id="projects" data-screen-label="Projets">
+  <span class="ghost" aria-hidden="true">03</span>
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="idx mono">(03)</span>
+      <span class="label mono" data-i18n="sh_proj_label">Sélection</span>
+      <h2 data-i18n="sh_proj_title">Projets</h2>
+    </div>
+    <div class="proj-grid">
+
+      <article class="proj feature reveal" data-case="logareth">
+        <div class="open-hint" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></div>
+        <div class="proj-shot" style="aspect-ratio:16/9"><image-slot id="proj-logareth" shape="rect" src="portfolio/logareth.png" fit="cover" placeholder="Capture — plateforme Logareth (16:9 ou large)"></image-slot></div>
+        <div class="proj-head">
+          <h3 class="proj-title">Logareth</h3>
+          <span class="proj-kind" data-i18n="p_log_kind">SaaS eSport · Multi-tenant</span>
+        </div>
+        <p class="proj-desc" data-i18n="p_log_desc">Plateforme SaaS qui réunit les quatre acteurs de l'écosystème eSport — <strong style="color:var(--fg);font-weight:500">structures, gamers, prestataires et spectateurs</strong>. Chaque structure orchestre ses équipes et rosters, ses événements (tournois, scrims, matchs), son fil de publications façon Twitter et sa marketplace de prestations. L'architecture repose sur des <strong style="color:var(--fg);font-weight:500">microservices NestJS</strong> (auth/RBAC, domaine structure) isolés derrière une gateway <strong style="color:var(--fg);font-weight:500">APISIX</strong> en forward-auth, avec une isolation multi-tenant par <code style="font-family:var(--font-mono);font-size:0.85em;color:var(--accent)">structure_id</code> et des rôles auto-générés par structure. Le frontend <strong style="color:var(--fg);font-weight:500">Next.js 15</strong> (App Router, React 19) adopte une direction artistique cyberpunk eSport.</p>
+        <div class="proj-foot">
+          <div class="proj-tags"><span class="tag">NestJS 11</span><span class="tag">TypeORM</span><span class="tag">PostgreSQL 17</span><span class="tag">APISIX</span><span class="tag">Next.js 15</span><span class="tag">Docker Compose</span></div>
+          <span class="proj-status"><span class="live"></span>Projet phare</span>
+        </div>
+      </article>
+
+      <article class="proj feature reveal" data-case="vinbot">
+        <div class="open-hint" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></div>
+        <div class="proj-shot" style="aspect-ratio:16/9"><image-slot id="proj-vinbot" shape="rect" src="portfolio/vinbot.png" fit="cover" placeholder="Capture — interface VinBOT"></image-slot></div>
+        <div class="proj-head">
+          <h3 class="proj-title">VinBOT</h3>
+          <span class="proj-kind" data-i18n="p_vin_kind">Sourcing IA · Microservices</span>
+        </div>
+        <p class="proj-desc" data-i18n="p_vin_desc">Automatisation de la veille sur Vinted à partir d'une simple <strong style="color:var(--fg);font-weight:500">image de référence</strong>. Pour chaque profil de recherche, le bot récupère les annonces par scraping (<strong style="color:var(--fg);font-weight:500">Playwright</strong>), les dédoublonne, puis les compare visuellement à l'image cible via un moteur d'IA local (<strong style="color:var(--fg);font-weight:500">embeddings CLIP</strong>) avec cache PostgreSQL — et n'envoie une alerte <strong style="color:var(--fg);font-weight:500">Telegram</strong> que pour les correspondances réellement pertinentes. Architecture en microservices NestJS derrière une gateway APISIX (forward-auth) : un service d'authentification (sessions, rôles, superadmin, comptes à mot de passe temporaire) et un service métier qui orchestre les runs, le scoring, le stockage d'images (<strong style="color:var(--fg);font-weight:500">MinIO</strong>) et les files d'attente (<strong style="color:var(--fg);font-weight:500">Redis / BullMQ</strong>) avec des workers multi-régions.</p>
+        <div class="proj-foot">
+          <div class="proj-tags"><span class="tag">NestJS</span><span class="tag">APISIX</span><span class="tag">PostgreSQL 17</span><span class="tag">Redis / BullMQ</span><span class="tag">MinIO</span><span class="tag">Playwright</span><span class="tag">CLIP</span><span class="tag">Next.js</span><span class="tag">Docker Compose</span></div>
+          <span class="proj-status"><span class="live"></span>Projet phare</span>
+        </div>
+      </article>
+
+      <article class="proj reveal" data-case="ronin">
+        <div class="open-hint" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></div>
+        <div class="proj-shot"><image-slot id="proj-ronin" shape="rect" src="portfolio/ronin.png" fit="cover" placeholder="Capture — app Rōnin"></image-slot></div>
+        <div class="proj-head">
+          <h3 class="proj-title">Rōnin</h3>
+          <span class="proj-kind" data-i18n="p_ron_kind">Mobile · Carnet de route</span>
+        </div>
+        <p class="proj-desc" data-i18n="p_ron_desc">Application mobile pour motards : enregistrement des trajets en GPS, cartes hors-ligne, statistiques de roulage (distance, dénivelé, inclinaison) et carnet d'entretien moto. Construite en Flutter avec un backend NestJS et synchronisation temps réel.</p>
+        <div class="proj-foot">
+          <div class="proj-tags"><span class="tag">Flutter</span><span class="tag">Dart</span><span class="tag">NestJS</span><span class="tag">PostgreSQL</span></div>
+        </div>
+      </article>
+
+      <article class="proj reveal" style="--d:80ms" data-case="octave">
+        <div class="open-hint" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></div>
+        <div class="proj-shot"><image-slot id="proj-octave" shape="rect" src="portfolio/octave.png" fit="cover" placeholder="Capture — app Octave"></image-slot></div>
+        <div class="proj-head">
+          <h3 class="proj-title">Octave</h3>
+          <span class="proj-kind" data-i18n="p_oct_kind">Web · Apprentissage piano</span>
+        </div>
+        <p class="proj-desc" data-i18n="p_oct_desc">Application web pour apprendre le piano : branchez un clavier MIDI, suivez des exercices interactifs et obtenez un retour en temps réel sur les notes jouées (justesse, tempo, rythme). Progression gamifiée et bibliothèque de morceaux. Frontend Next.js avec Web MIDI API, backend NestJS et PostgreSQL.</p>
+        <div class="proj-foot">
+          <div class="proj-tags"><span class="tag">Next.js</span><span class="tag">Web MIDI</span><span class="tag">NestJS</span><span class="tag">PostgreSQL</span></div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ STACK ============ -->
+<section class="section band" id="stack" data-screen-label="Stack">
+  <span class="ghost" aria-hidden="true">04</span>
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="idx mono">(04)</span>
+      <span class="label mono" data-i18n="sh_stack_label">Outils</span>
+      <h2 data-i18n="sh_stack_title">Stack technique</h2>
+    </div>
+    <div class="stack-grid reveal">
+      <div class="stack-cat">
+        <div class="cat-label" data-i18n="cat_lang">Langages</div>
+        <div class="stack-items"><span class="ti"><img src="portfolio/icons/python.svg" alt="" loading="lazy" onerror="this.remove()" />Python</span><span class="ti"><img src="portfolio/icons/typescript.svg" alt="" loading="lazy" onerror="this.remove()" />TypeScript</span><span class="ti"><img src="portfolio/icons/php.svg" alt="" loading="lazy" onerror="this.remove()" />PHP</span><span class="ti"><img src="portfolio/icons/openjdk.svg" alt="" loading="lazy" onerror="this.remove()" />Java</span><span class="ti"><img src="portfolio/icons/sharp.svg" alt="" loading="lazy" onerror="this.remove()" />C#</span><span class="ti"><img src="portfolio/icons/kotlin.svg" alt="" loading="lazy" onerror="this.remove()" />Kotlin</span><span class="ti"><img src="portfolio/icons/gnubash.svg" alt="" loading="lazy" onerror="this.remove()" />Bash</span></div>
+      </div>
+      <div class="stack-cat">
+        <div class="cat-label" data-i18n="cat_front">Front-end</div>
+        <div class="stack-items"><span class="ti"><img src="portfolio/icons/react.svg" alt="" loading="lazy" onerror="this.remove()" />React</span><span class="ti"><img src="portfolio/icons/nextdotjs.svg" alt="" loading="lazy" onerror="this.remove()" />Next.js</span><span class="ti"><img src="portfolio/icons/vuedotjs.svg" alt="" loading="lazy" onerror="this.remove()" />Vue.js</span><span class="ti"><img src="portfolio/icons/html5.svg" alt="" loading="lazy" onerror="this.remove()" />HTML</span><span class="ti"><img src="portfolio/icons/css.svg" alt="" loading="lazy" onerror="this.remove()" />CSS</span></div>
+      </div>
+      <div class="stack-cat">
+        <div class="cat-label" data-i18n="cat_back">Back-end</div>
+        <div class="stack-items"><span class="ti"><img src="portfolio/icons/nodedotjs.svg" alt="" loading="lazy" onerror="this.remove()" />Node.js</span><span class="ti"><img src="portfolio/icons/nestjs.svg" alt="" loading="lazy" onerror="this.remove()" />NestJS</span><span class="ti"><img src="portfolio/icons/express.svg" alt="" loading="lazy" onerror="this.remove()" />Express</span><span class="ti"><img src="portfolio/icons/laravel.svg" alt="" loading="lazy" onerror="this.remove()" />Laravel</span><span class="ti"><img src="portfolio/icons/symfony.svg" alt="" loading="lazy" onerror="this.remove()" />Symfony</span><span class="ti"><img src="portfolio/icons/django.svg" alt="" loading="lazy" onerror="this.remove()" />Django</span></div>
+      </div>
+      <div class="stack-cat">
+        <div class="cat-label" data-i18n="cat_mobile">Mobile</div>
+        <div class="stack-items"><span class="ti"><img src="portfolio/icons/flutter.svg" alt="" loading="lazy" onerror="this.remove()" />Flutter</span><span class="ti"><img src="portfolio/icons/react.svg" alt="" loading="lazy" onerror="this.remove()" />React Native</span></div>
+      </div>
+      <div class="stack-cat">
+        <div class="cat-label" data-i18n="cat_data">Données &amp; DevOps</div>
+        <div class="stack-items"><span class="ti"><img src="portfolio/icons/postgresql.svg" alt="" loading="lazy" onerror="this.remove()" />PostgreSQL</span><span class="ti"><img src="portfolio/icons/mysql.svg" alt="" loading="lazy" onerror="this.remove()" />MySQL</span><span class="ti"><img src="portfolio/icons/mongodb.svg" alt="" loading="lazy" onerror="this.remove()" />MongoDB</span><span class="ti"><img src="portfolio/icons/docker.svg" alt="" loading="lazy" onerror="this.remove()" />Docker</span><span class="ti">CI/CD</span><span class="ti"><img src="portfolio/icons/gitlab.svg" alt="" loading="lazy" onerror="this.remove()" />GitLab</span><span class="ti"><img src="portfolio/icons/linux.svg" alt="" loading="lazy" onerror="this.remove()" />Linux</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FORMATION ============ -->
+<section class="section" id="formation" data-screen-label="Formation">
+  <span class="ghost" aria-hidden="true">05</span>
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="idx mono">(05)</span>
+      <span class="label mono" data-i18n="sh_edu_label">Diplômes</span>
+      <h2 data-i18n="sh_edu_title">Formation</h2>
+    </div>
+    <div class="edu-list">
+      <article class="edu reveal">
+        <div>
+          <h3 class="edu-title" data-i18n="edu1_title">Master — Architecte de Système d'Information</h3>
+          <div class="edu-school">ETNA · Développement</div>
+          <p class="edu-detail" data-i18n="edu1_detail">Spécialisation Cloud Computing &amp; Micro-services.</p>
+        </div>
+        <div class="edu-year">2025</div>
+      </article>
+      <article class="edu reveal" style="--d:80ms">
+        <div>
+          <h3 class="edu-title" data-i18n="edu2_title">Baccalauréat</h3>
+          <div class="edu-school">Lycée Lucie Aubrac</div>
+          <p class="edu-detail" data-i18n="edu2_detail">Spécialités Mathématiques, Sciences de l'ingénieur, Physique-Chimie.</p>
+        </div>
+        <div class="edu-year">2021</div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LANGUES & INTÉRÊTS ============ -->
+<section class="section" id="more" data-screen-label="Langues & intérêts">
+  <span class="ghost" aria-hidden="true">06</span>
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="idx mono">(06)</span>
+      <span class="label mono" data-i18n="sh_more_label">Au-delà du code</span>
+    </div>
+    <div class="li-grid">
+      <div class="li-block reveal">
+        <h3 data-i18n="lang_h">Langues</h3>
+        <div class="lang-row"><span class="l" data-i18n="lang_fr_l">Français</span><span class="lvl" data-i18n="lang_fr_lvl">Natif</span></div>
+      </div>
+      <div class="li-block reveal" style="--d:100ms">
+        <h3 data-i18n="int_h">Centres d'intérêt</h3>
+        <div class="interests">
+          <span class="interest" data-i18n="int_moto">Moto</span>
+          <span class="interest" data-i18n="int_travel">Voyages</span>
+          <span class="interest" data-i18n="int_piano">Piano</span>
+          <span class="interest" data-i18n="int_japan">Culture japonaise</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="contact" id="contact" data-screen-label="Contact">
+  <div class="wrap">
+    <div class="contact-lead reveal mono" data-i18n="contact_lead">Travaillons ensemble</div>
+    <h2 class="reveal" data-i18n="contact_h">Parlons de<br />votre projet.</h2>
+    <a class="contact-mail reveal" href="mailto:mohamedelmparis@gmail.com" data-magnetic>
+      <span style="font-size:clamp(22px,3.5vw,44px);font-weight:500;letter-spacing:-0.02em;font-family:var(--font-display)">mohamedelmparis@gmail.com</span>
+      <span class="arrow" style="font-size:clamp(22px,3.5vw,44px)">↗</span>
+    </a>
+    <div class="contact-actions reveal">
+      <a href="portfolio/CV-Mohamed-El-Marzouki.pdf" download class="btn btn-primary"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14"/></svg><span data-i18n="cta_cv">Télécharger le CV</span></a>
+      <a href="https://linkedin.com/in/mohamed-el-marzouki" target="_blank" rel="noopener" class="btn">LinkedIn ↗</a>
+    </div>
+    <div class="contact-info reveal">
+      <div class="item"><div class="k" data-i18n="ci_phone_k">Téléphone</div><div class="v"><a href="tel:+33767657165">+33 7 67 65 71 65</a></div></div>
+      <div class="item"><div class="k" data-i18n="ci_loc_k">Localisation</div><div class="v" data-i18n="ci_loc_v">Paris, Île-de-France</div></div>
+      <div class="item"><div class="k" data-i18n="ci_li_k">LinkedIn</div><div class="v"><a href="https://linkedin.com/in/mohamed-el-marzouki" target="_blank" rel="noopener">in/mohamed-el-marzouki ↗</a></div></div>
+      <div class="item"><div class="k" data-i18n="ci_avail_k">Disponibilité</div><div class="v" data-i18n="ci_avail_v">Freelance · Missions</div></div>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <span class="mono">© 2026 — Mohamed Anes El Marzouki</span>
+  <span class="mono" data-i18n="foot_role">Full-Stack · Lead</span>
+  <a href="#top" class="to-top" data-i18n="foot_top">Haut de page ↑</a>
+</footer>
+
+<!-- ============ CASE STUDY OVERLAY ============ -->
+<div class="case-overlay" id="caseOverlay" aria-hidden="true" role="dialog" aria-modal="true">
+  <button class="btn case-close" id="caseClose" aria-label="Fermer"><span data-i18n="case_close">Fermer</span> ✕</button>
+  <div class="case-scroll" id="caseScroll">
+
+    <article class="case" data-case="logareth">
+      <div class="case-head">
+        <div>
+          <div class="case-kind" data-i18n="p_log_kind">SaaS eSport · Multi-tenant</div>
+          <h2 class="case-title">Logareth</h2>
+        </div>
+        <span class="case-status"><span class="live"></span><span data-i18n="st_flagship">Projet phare</span></span>
+      </div>
+      <div class="case-hero"><image-slot id="cs-logareth-hero" shape="rect" src="portfolio/logareth.png" fit="cover" placeholder="Capture Logareth"></image-slot></div>
+      <div class="case-body">
+        <div class="case-lead">
+          <p data-i18n="cs_log_p1">Logareth est une plateforme SaaS qui réunit les quatre acteurs de l'écosystème eSport — <strong>structures, gamers, prestataires et spectateurs</strong> — sur une même stack. Chaque structure (club ou organisation) y orchestre ses équipes et rosters, ses événements (tournois, scrims, matchs), son fil de publications et sa marketplace de prestations.</p>
+          <p data-i18n="cs_log_p2">L'architecture repose sur des microservices NestJS (authentification/RBAC et domaine structure) isolés derrière une gateway APISIX en forward-auth, avec une isolation multi-tenant par <strong>structure_id</strong> et des rôles auto-générés par structure. Le frontend Next.js 15 (App Router, React 19) adopte une direction artistique cyberpunk eSport.</p>
+        </div>
+        <div class="case-aside">
+          <div>
+            <h4 data-i18n="case_high">Points clés</h4>
+            <ul class="case-high">
+              <li data-i18n="cs_log_h1">Isolation multi-tenant stricte des données par structure_id</li>
+              <li data-i18n="cs_log_h2">Rôles RBAC auto-générés par structure (owner, manager…)</li>
+              <li data-i18n="cs_log_h3">Gateway APISIX en forward-auth devant les microservices</li>
+              <li data-i18n="cs_log_h4">Fil social façon Twitter + marketplace de prestations</li>
+            </ul>
+          </div>
+          <div>
+            <h4 data-i18n="case_info">Infos</h4>
+            <div class="case-meta-row"><span data-i18n="case_role">Rôle</span><span data-i18n="cs_role_v">Conception &amp; dév</span></div>
+            <div class="case-meta-row"><span data-i18n="case_year">Année</span><span>2026</span></div>
+            <div class="case-meta-row"><span data-i18n="case_type">Type</span><span data-i18n="cs_log_type">SaaS multi-tenant</span></div>
+          </div>
+          <div>
+            <h4>Stack</h4>
+            <div class="case-tags"><span class="tag">NestJS 11</span><span class="tag">TypeORM</span><span class="tag">PostgreSQL 17</span><span class="tag">APISIX</span><span class="tag">Next.js 15</span><span class="tag">React 19</span><span class="tag">Docker Compose</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="case-gallery-label" data-i18n="case_more_shots">Plus de captures</div>
+      <div class="case-gallery">
+        <div class="shot"><image-slot id="cs-logareth-2" shape="rect" placeholder="Déposez une capture"></image-slot></div>
+        <div class="shot"><image-slot id="cs-logareth-3" shape="rect" placeholder="Déposez une capture"></image-slot></div>
+      </div>
+    </article>
+
+    <article class="case" data-case="vinbot" hidden>
+      <div class="case-head">
+        <div>
+          <div class="case-kind" data-i18n="p_vin_kind">Sourcing IA · Microservices</div>
+          <h2 class="case-title">VinBOT</h2>
+        </div>
+        <span class="case-status"><span class="live"></span><span data-i18n="st_flagship">Projet phare</span></span>
+      </div>
+      <div class="case-hero"><image-slot id="cs-vinbot-hero" shape="rect" src="portfolio/vinbot.png" fit="cover" placeholder="Capture VinBOT"></image-slot></div>
+      <div class="case-body">
+        <div class="case-lead">
+          <p data-i18n="cs_vin_p1">VinBOT automatise la veille sur Vinted à partir d'une simple <strong>image de référence</strong>. Pour chaque profil de recherche, le bot récupère les annonces via scraping (Playwright), les dédoublonne, puis les compare visuellement à l'image cible grâce à un moteur d'IA local (embeddings CLIP) avec cache PostgreSQL — et n'envoie une alerte Telegram que pour les correspondances réellement pertinentes.</p>
+          <p data-i18n="cs_vin_p2">L'architecture est en microservices NestJS derrière une gateway APISIX (forward-auth) : un service d'authentification (sessions, rôles, superadmin, comptes à mot de passe temporaire par email) et un service métier qui orchestre runs, scoring, stockage d'images (MinIO) et files d'attente (Redis / BullMQ) avec des workers multi-régions.</p>
+        </div>
+        <div class="case-aside">
+          <div>
+            <h4 data-i18n="case_high">Points clés</h4>
+            <ul class="case-high">
+              <li data-i18n="cs_vin_h1">Matching visuel par embeddings CLIP exécutés en local</li>
+              <li data-i18n="cs_vin_h2">Scraping temps réel via Playwright + dédoublonnage</li>
+              <li data-i18n="cs_vin_h3">Workers multi-régions pilotés par Redis / BullMQ</li>
+              <li data-i18n="cs_vin_h4">Alertes Telegram ciblées sur les correspondances pertinentes</li>
+            </ul>
+          </div>
+          <div>
+            <h4 data-i18n="case_info">Infos</h4>
+            <div class="case-meta-row"><span data-i18n="case_role">Rôle</span><span data-i18n="cs_role_v">Conception &amp; dév</span></div>
+            <div class="case-meta-row"><span data-i18n="case_year">Année</span><span>2026</span></div>
+            <div class="case-meta-row"><span data-i18n="case_type">Type</span><span data-i18n="cs_vin_type">Bot + Web App</span></div>
+          </div>
+          <div>
+            <h4>Stack</h4>
+            <div class="case-tags"><span class="tag">NestJS</span><span class="tag">APISIX</span><span class="tag">PostgreSQL 17</span><span class="tag">Redis / BullMQ</span><span class="tag">MinIO</span><span class="tag">Playwright</span><span class="tag">CLIP</span><span class="tag">Next.js</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="case-gallery-label" data-i18n="case_more_shots">Plus de captures</div>
+      <div class="case-gallery">
+        <div class="shot"><image-slot id="cs-vinbot-2" shape="rect" placeholder="Déposez une capture"></image-slot></div>
+        <div class="shot"><image-slot id="cs-vinbot-3" shape="rect" placeholder="Déposez une capture"></image-slot></div>
+      </div>
+    </article>
+
+    <article class="case" data-case="ronin" hidden>
+      <div class="case-head">
+        <div>
+          <div class="case-kind" data-i18n="p_ron_kind">Mobile · Carnet de route</div>
+          <h2 class="case-title">Rōnin</h2>
+        </div>
+      </div>
+      <div class="case-hero"><image-slot id="cs-ronin-hero" shape="rect" src="portfolio/ronin.png" fit="cover" placeholder="Capture Rōnin"></image-slot></div>
+      <div class="case-body">
+        <div class="case-lead">
+          <p data-i18n="cs_ron_p1">Rōnin est une application mobile pensée pour les motards : chaque sortie est enregistrée en GPS, avec <strong>cartes hors-ligne</strong> et statistiques de roulage détaillées (distance, durée, vitesse moyenne, inclinaison). Un carnet d'entretien suit la mécanique de la moto au fil des kilomètres.</p>
+          <p data-i18n="cs_ron_p2">Construite en Flutter (Dart) avec un backend NestJS et PostgreSQL, l'app synchronise les trajets en temps réel et fonctionne hors connexion grâce à un cache local et des cartes téléchargeables.</p>
+        </div>
+        <div class="case-aside">
+          <div>
+            <h4 data-i18n="case_high">Points clés</h4>
+            <ul class="case-high">
+              <li data-i18n="cs_ron_h1">Enregistrement GPS des trajets en temps réel</li>
+              <li data-i18n="cs_ron_h2">Cartes hors-ligne pour rouler sans réseau</li>
+              <li data-i18n="cs_ron_h3">Statistiques de roulage (distance, inclinaison…)</li>
+              <li data-i18n="cs_ron_h4">Carnet d'entretien moto</li>
+            </ul>
+          </div>
+          <div>
+            <h4 data-i18n="case_info">Infos</h4>
+            <div class="case-meta-row"><span data-i18n="case_role">Rôle</span><span data-i18n="cs_role_v">Conception &amp; dév</span></div>
+            <div class="case-meta-row"><span data-i18n="case_type">Type</span><span data-i18n="cs_ron_type">App mobile</span></div>
+          </div>
+          <div>
+            <h4>Stack</h4>
+            <div class="case-tags"><span class="tag">Flutter</span><span class="tag">Dart</span><span class="tag">NestJS</span><span class="tag">PostgreSQL</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="case-gallery-label" data-i18n="case_more_shots">Plus de captures</div>
+      <div class="case-gallery">
+        <div class="shot"><image-slot id="cs-ronin-2" shape="rect" placeholder="Déposez une capture"></image-slot></div>
+        <div class="shot"><image-slot id="cs-ronin-3" shape="rect" placeholder="Déposez une capture"></image-slot></div>
+      </div>
+    </article>
+
+    <article class="case" data-case="octave" hidden>
+      <div class="case-head">
+        <div>
+          <div class="case-kind" data-i18n="p_oct_kind">Web · Apprentissage piano</div>
+          <h2 class="case-title">Octave</h2>
+        </div>
+      </div>
+      <div class="case-hero"><image-slot id="cs-octave-hero" shape="rect" src="portfolio/octave.png" fit="cover" placeholder="Capture Octave"></image-slot></div>
+      <div class="case-body">
+        <div class="case-lead">
+          <p data-i18n="cs_oct_p1">Octave est une application web pour apprendre le piano. Branchez un <strong>clavier MIDI</strong> et suivez des exercices interactifs : les notes défilent à l'écran et l'app analyse en temps réel votre jeu (justesse, tempo, rythme), avec un retour immédiat note par note.</p>
+          <p data-i18n="cs_oct_p2">Le frontend Next.js exploite la Web MIDI API pour lire le clavier en direct ; le backend NestJS et PostgreSQL gèrent la progression gamifiée et la bibliothèque de morceaux.</p>
+        </div>
+        <div class="case-aside">
+          <div>
+            <h4 data-i18n="case_high">Points clés</h4>
+            <ul class="case-high">
+              <li data-i18n="cs_oct_h1">Lecture du clavier en direct via la Web MIDI API</li>
+              <li data-i18n="cs_oct_h2">Retour en temps réel : justesse, tempo, rythme</li>
+              <li data-i18n="cs_oct_h3">Progression gamifiée et bibliothèque de morceaux</li>
+              <li data-i18n="cs_oct_h4">Exercices interactifs (gammes, morceaux)</li>
+            </ul>
+          </div>
+          <div>
+            <h4 data-i18n="case_info">Infos</h4>
+            <div class="case-meta-row"><span data-i18n="case_role">Rôle</span><span data-i18n="cs_role_v">Conception &amp; dév</span></div>
+            <div class="case-meta-row"><span data-i18n="case_type">Type</span><span data-i18n="cs_oct_type">App web</span></div>
+          </div>
+          <div>
+            <h4>Stack</h4>
+            <div class="case-tags"><span class="tag">Next.js</span><span class="tag">Web MIDI</span><span class="tag">NestJS</span><span class="tag">PostgreSQL</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="case-gallery-label" data-i18n="case_more_shots">Plus de captures</div>
+      <div class="case-gallery">
+        <div class="shot"><image-slot id="cs-octave-2" shape="rect" placeholder="Déposez une capture"></image-slot></div>
+        <div class="shot"><image-slot id="cs-octave-3" shape="rect" placeholder="Déposez une capture"></image-slot></div>
+      </div>
+    </article>
+
+  </div>
+  <div class="case-nav">
+    <button class="btn" data-case-nav="prev" aria-label="Projet précédent">←</button>
+    <button class="btn" data-case-nav="next" aria-label="Projet suivant">→</button>
+  </div>
+</div>
+
+<!-- mount point for tweaks -->
+<div id="tweaks-root"></div>
+
+<script src="portfolio/image-slot.js"></script>
+<script src="portfolio/app.js"></script>
+<script src="portfolio/effects.js"></script>
+<script src="portfolio/i18n.js"></script>
+
+<!-- React + Babel for the Tweaks panel -->
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script type="text/babel" src="portfolio/tweaks-panel.jsx"></script>
+<script type="text/babel" src="portfolio/tweaks.jsx"></script>
+
+</body>
+</html>
