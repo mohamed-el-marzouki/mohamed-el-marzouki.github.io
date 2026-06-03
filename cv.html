@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CV — Mohamed Anes El Marzouki</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1e2630;          /* sidebar — ton du costume */
+    --ink-2:#171d26;
+    --paper:#fbfaf6;        /* main warm off-white */
+    --text:#222831;
+    --muted:#646e79;
+    --faint:#9098a2;
+    --line:#e7e3da;
+    --accent:#bf8a3f;       /* sable / ambre chaud */
+    --accent-d:#a9762f;
+    --s-text:#c4cbd4;       /* sidebar light text */
+    --s-faint:#8b95a1;
+    --s-head:#d8a85f;
+    --s-line:rgba(255,255,255,.13);
+    --s-chip:rgba(255,255,255,.06);
+  }
+  *{ box-sizing:border-box; margin:0; padding:0; }
+  html,body{ background:#e9ebee; }
+  body{
+    font-family:'Manrope', system-ui, sans-serif;
+    color:var(--text);
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+    display:flex; justify-content:center;
+    padding:28px 16px;
+  }
+
+  .page{
+    width:210mm; min-height:297mm;
+    background:var(--paper);
+    display:grid; grid-template-columns:71mm 1fr;
+    box-shadow:0 14px 46px rgba(20,28,40,.20);
+    overflow:hidden; position:relative;
+    -webkit-print-color-adjust:exact; print-color-adjust:exact;
+  }
+
+  /* ============ SIDEBAR ============ */
+  .sidebar{ background:var(--ink); color:var(--s-text); position:relative; }
+
+  .photo{
+    position:relative; width:100%; height:78mm; overflow:hidden;
+    background:var(--ink-2);
+  }
+  .photo img{ width:100%; height:100%; object-fit:cover; object-position:46% 28%; display:block; }
+  .photo::after{
+    content:""; position:absolute; inset:0;
+    background:linear-gradient(180deg, rgba(30,38,48,0) 55%, rgba(30,38,48,.55) 82%, var(--ink) 100%);
+  }
+  .photo-tag{
+    position:absolute; left:0; bottom:7px; z-index:2;
+    display:flex; align-items:center; gap:8px;
+    padding:0 9mm;
+  }
+  .photo-tag .bar{ width:22px; height:3px; background:var(--accent); }
+  .photo-tag span{
+    font-family:'Space Grotesk',sans-serif; font-size:9px; font-weight:600;
+    letter-spacing:.2em; text-transform:uppercase; color:#fff; white-space:nowrap;
+  }
+
+  .side-pad{ padding:7mm 9mm 11mm; }
+  .side-block{ margin-bottom:6mm; }
+  .side-block:last-child{ margin-bottom:0; }
+
+  .side-h{
+    font-family:'Space Grotesk',sans-serif;
+    font-size:10px; font-weight:600; letter-spacing:.22em;
+    text-transform:uppercase; color:var(--s-head);
+    display:flex; align-items:center; gap:8px; margin-bottom:9px;
+  }
+  .side-h::after{ content:""; flex:1; height:1px; background:var(--s-line); }
+
+  .crow{
+    display:flex; gap:8px; align-items:flex-start;
+    font-size:10px; line-height:1.5; color:var(--s-text);
+    margin-bottom:7px; word-break:break-word;
+  }
+  .crow:last-child{ margin-bottom:0; }
+  .ic{ flex:0 0 13px; width:13px; height:13px; margin-top:1px; color:var(--accent); }
+  .crow a{ color:var(--s-text); text-decoration:none; }
+  .ph{ color:var(--s-faint); font-style:italic; }
+
+  .sgroup{ margin-bottom:8px; }
+  .sgroup:last-child{ margin-bottom:0; }
+  .slabel{
+    font-size:9px; font-weight:700; color:#aeb6c0;
+    text-transform:uppercase; letter-spacing:.08em; margin-bottom:5px;
+  }
+  .chips{ display:flex; flex-wrap:wrap; gap:4px; }
+  .chip{
+    font-size:9px; line-height:1; padding:4px 7px;
+    background:var(--s-chip); border:1px solid var(--s-line);
+    border-radius:4px; color:#dfe3e9; white-space:nowrap;
+  }
+
+  .lrow{ display:flex; align-items:center; justify-content:space-between; gap:8px; margin-bottom:9px; }
+  .lrow:last-child{ margin-bottom:0; }
+  .lname{ font-size:10.5px; font-weight:600; color:#e7ebf0; }
+  .llevel{ font-size:8.5px; color:var(--s-faint); letter-spacing:.04em; }
+  .dots{ display:flex; gap:3px; margin-top:4px; }
+  .dot{ width:6px; height:6px; border-radius:50%; background:rgba(255,255,255,.18); }
+  .dot.on{ background:var(--accent); }
+
+  /* ============ MAIN ============ */
+  .main{ padding:13mm 12mm 12mm 13mm; }
+
+  .kicker{
+    font-family:'Space Grotesk',sans-serif;
+    font-size:10px; font-weight:600; letter-spacing:.32em;
+    text-transform:uppercase; color:var(--accent-d); margin-bottom:8px;
+  }
+  .name{
+    font-family:'Space Grotesk',sans-serif;
+    font-size:30px; font-weight:700; line-height:1.0;
+    letter-spacing:-.01em; color:var(--text); text-transform:uppercase;
+  }
+  .name .l2{ display:block; color:var(--accent); }
+  .role{
+    font-size:11.5px; font-weight:600; letter-spacing:.04em;
+    color:var(--muted); margin-top:11px; max-width:92%;
+  }
+
+  .block{ margin-top:5.4mm; }
+  .h{
+    font-family:'Space Grotesk',sans-serif;
+    font-size:12px; font-weight:600; letter-spacing:.2em;
+    text-transform:uppercase; color:var(--text);
+    display:flex; align-items:center; gap:10px; margin-bottom:9px;
+  }
+  .h::before{ content:""; width:14px; height:3px; background:var(--accent); }
+  .h::after{ content:""; flex:1; height:1px; background:var(--line); }
+
+  .profil{ font-size:11px; line-height:1.55; color:var(--muted); text-wrap:pretty; }
+
+  /* experiences */
+  .job{ display:grid; grid-template-columns:auto 1fr; gap:13px; margin-bottom:3.2mm; }
+  .job:last-child{ margin-bottom:0; }
+  .jidx{
+    font-family:'Space Grotesk',sans-serif; font-size:12px; font-weight:700;
+    color:var(--accent); padding-top:1px; letter-spacing:.02em;
+  }
+  .jbody{ position:relative; }
+  .jhead{ display:flex; justify-content:space-between; align-items:baseline; gap:10px; }
+  .jtitle{ font-size:12.5px; font-weight:700; color:var(--text); line-height:1.25; }
+  .jdate{
+    font-family:'Space Grotesk',sans-serif; font-size:8.5px; font-weight:600;
+    color:var(--accent-d); white-space:nowrap; letter-spacing:.04em;
+    text-transform:uppercase; padding-top:2px;
+  }
+  .jmeta{ font-size:10px; font-weight:600; color:#7a838d; margin:2px 0 4px; }
+  .jdesc{ font-size:10px; line-height:1.45; color:var(--muted); text-wrap:pretty; }
+  .jdesc b{ color:var(--text); font-weight:700; }
+
+  /* education */
+  .edu{ display:grid; grid-template-columns:auto 1fr; gap:13px; margin-bottom:3.6mm; }
+  .edu:last-child{ margin-bottom:0; }
+  .ehead{ display:flex; justify-content:space-between; align-items:baseline; gap:10px; }
+  .etitle{ font-size:11.5px; font-weight:700; color:var(--text); }
+  .edate{ font-family:'Space Grotesk',sans-serif; font-size:9px; font-weight:600; color:var(--accent-d); white-space:nowrap; }
+  .emeta{ font-size:10px; color:#7a838d; font-weight:600; margin-top:1px; }
+  .esub{ font-size:9.5px; color:var(--faint); margin-top:1px; }
+  .ebullet{
+    font-family:'Space Grotesk',sans-serif; font-size:12px; font-weight:700;
+    color:var(--accent); padding-top:1px;
+  }
+
+  @page{ size:A4; margin:0; }
+  @media print{
+    html,body{ background:#fff; padding:0; }
+    .page{ box-shadow:none; }
+    .no-print{ display:none !important; }
+  }
+  .hint{
+    position:fixed; left:50%; transform:translateX(-50%); bottom:14px;
+    background:#1e2630; color:#fff; font-size:12px; font-family:'Manrope',sans-serif;
+    padding:8px 16px; border-radius:999px; box-shadow:0 6px 20px rgba(0,0,0,.25);
+    z-index:50; display:flex; align-items:center; gap:8px;
+  }
+  .hint b{ font-weight:700; color:var(--s-head); }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- ============ SIDEBAR ============ -->
+  <aside class="sidebar">
+
+    <div class="photo">
+      <img src="portfolio/portrait.jpg" alt="Mohamed Anes El Marzouki">
+      <div class="photo-tag"><span class="bar"></span><span>Full-Stack · Lead</span></div>
+    </div>
+
+    <div class="side-pad">
+
+      <div class="side-block">
+        <div class="side-h">Contact</div>
+        <div class="crow">
+          <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+          <span>+33 7 67 65 71 65</span>
+        </div>
+        <div class="crow">
+          <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 5L2 7"/></svg>
+          <a href="mailto:mohamedelmparis@gmail.com">mohamedelmparis@gmail.com</a>
+        </div>
+        <div class="crow">
+          <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span>Paris, Île-de-France</span>
+        </div>
+      </div>
+
+      <div class="side-block">
+        <div class="side-h">Liens</div>
+        <div class="crow">
+          <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6Z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          <a href="https://www.linkedin.com/in/mohamed-el-marzouki">linkedin.com/in/mohamed-el-marzouki</a>
+        </div>
+        <div class="crow">
+          <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10Z"/></svg>
+          <a href="https://mohamed-el-marzouki.github.io/">mohamed-el-marzouki.github.io</a>
+        </div>
+      </div>
+
+      <div class="side-block">
+        <div class="side-h">Stack technique</div>
+        <div class="sgroup">
+          <div class="slabel">Langages</div>
+          <div class="chips"><span class="chip">Python</span><span class="chip">TypeScript</span><span class="chip">PHP</span><span class="chip">Java</span><span class="chip">C#</span><span class="chip">Kotlin</span><span class="chip">Bash</span></div>
+        </div>
+        <div class="sgroup">
+          <div class="slabel">Front-End</div>
+          <div class="chips"><span class="chip">React</span><span class="chip">Next.js</span><span class="chip">Vue.js</span><span class="chip">HTML</span><span class="chip">CSS</span></div>
+        </div>
+        <div class="sgroup">
+          <div class="slabel">Back-End</div>
+          <div class="chips"><span class="chip">Node.js</span><span class="chip">NestJS</span><span class="chip">Express</span><span class="chip">Laravel</span><span class="chip">Symfony</span><span class="chip">Django</span></div>
+        </div>
+        <div class="sgroup">
+          <div class="slabel">Mobile</div>
+          <div class="chips"><span class="chip">Flutter</span><span class="chip">React Native</span></div>
+        </div>
+        <div class="sgroup">
+          <div class="slabel">Données &amp; DevOps</div>
+          <div class="chips"><span class="chip">PostgreSQL</span><span class="chip">MySQL</span><span class="chip">MongoDB</span><span class="chip">Docker</span><span class="chip">CI/CD</span><span class="chip">GitLab</span><span class="chip">Linux</span></div>
+        </div>
+      </div>
+
+      <div class="side-block">
+        <div class="side-h">Langues</div>
+        <div class="lrow">
+          <div>
+            <div class="lname">Français</div>
+            <div class="dots"><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span></div>
+          </div>
+          <div class="llevel">Natif</div>
+        </div>
+        <div class="lrow">
+          <div>
+            <div class="lname">Anglais</div>
+            <div class="dots"><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot"></span><span class="dot"></span></div>
+          </div>
+          <div class="llevel">Professionnel</div>
+        </div>
+        <div class="lrow">
+          <div>
+            <div class="lname">Arabe</div>
+            <div class="dots"><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span></div>
+          </div>
+          <div class="llevel">Natif</div>
+        </div>
+      </div>
+
+      <div class="side-block">
+        <div class="side-h">Centres d'intérêt</div>
+        <div class="chips"><span class="chip">Moto</span><span class="chip">Voyages</span><span class="chip">Piano</span><span class="chip">Culture japonaise</span></div>
+      </div>
+
+    </div>
+  </aside>
+
+  <!-- ============ MAIN ============ -->
+  <main class="main">
+
+    <header>
+      <h1 class="name">Mohamed Anes<span class="l2">El Marzouki</span></h1>
+      <p class="role">Développeur Full-Stack &amp; Lead — conception et livraison d'applications web et mobiles, de l'architecture au déploiement, avec une approche orientée qualité, performance et DevOps.</p>
+    </header>
+
+    <section class="block">
+      <h2 class="h">Profil</h2>
+      <p class="profil">Développeur Full-Stack &amp; Lead à l'aise sur l'ensemble de la chaîne technique — TypeScript, React/Next.js, NestJS, Flutter — et dans l'encadrement d'équipes. J'interviens de la conception d'architecture jusqu'au déploiement, en gardant le cap sur la performance, la sécurité et la qualité du code.</p>
+    </section>
+
+    <section class="block">
+      <h2 class="h">Expériences</h2>
+
+      <div class="job">
+        <div class="jidx">01</div>
+        <div class="jbody">
+          <div class="jhead"><div class="jtitle">Développeur Full-Stack Web</div><div class="jdate">10/2025 — Auj.</div></div>
+          <div class="jmeta">Freelance · Paris</div>
+          <div class="jdesc">Conception et développement d'applications web &amp; mobiles Full-Stack avec React, Next.js, NestJS, Django, React Native, Flutter et PostgreSQL.</div>
+        </div>
+      </div>
+
+      <div class="job">
+        <div class="jidx">02</div>
+        <div class="jbody">
+          <div class="jhead"><div class="jtitle">Lead Developer</div><div class="jdate">04/2025 — 10/2025</div></div>
+          <div class="jmeta">SoftProces · Paris</div>
+          <div class="jdesc">Développement full-stack TypeScript (React/Next.js · NestJS), gestion PostgreSQL, intégration Docker, revue de code et optimisation performance &amp; sécurité.</div>
+        </div>
+      </div>
+
+      <div class="job">
+        <div class="jidx">03</div>
+        <div class="jbody">
+          <div class="jhead"><div class="jtitle">Formateur Web &amp; Mobile</div><div class="jdate">03/2023 — 12/2025</div></div>
+          <div class="jmeta">Freelance · Île-de-France</div>
+          <div class="jdesc">Encadrement d'étudiants sur les technologies web &amp; mobile, projets pratiques et accompagnement vers l'autonomie professionnelle.</div>
+        </div>
+      </div>
+
+      <div class="job">
+        <div class="jidx">04</div>
+        <div class="jbody">
+          <div class="jhead"><div class="jtitle">Développeur Full-Stack Mobile</div><div class="jdate">01/2023 — 04/2025</div></div>
+          <div class="jmeta">Eviden / Atos · Cergy</div>
+          <div class="jdesc">Messagerie sécurisée avec Flutter (Dart/Kotlin), développement de plugins Java, intégration backend et scripts logiques en Python.</div>
+        </div>
+      </div>
+
+      <div class="job">
+        <div class="jidx">05</div>
+        <div class="jbody">
+          <div class="jhead"><div class="jtitle">Développeur Full-Stack Web</div><div class="jdate">03/2022 — 01/2023</div></div>
+          <div class="jmeta">Fixers · Paris</div>
+          <div class="jdesc">Création du back-office (Laravel, MySQL), développement d'un chatbot et ajout de fonctionnalités analytiques.</div>
+        </div>
+      </div>
+
+    </section>
+
+    <section class="block">
+      <h2 class="h">Projets phares</h2>
+
+      <div class="job">
+        <div class="jidx">◆</div>
+        <div class="jbody">
+          <div class="jhead"><div class="jtitle">Logareth</div><div class="jdate">SaaS eSport</div></div>
+          <div class="jmeta">Plateforme multi-tenant · Microservices</div>
+          <div class="jdesc">Réunit structures, gamers, prestataires et spectateurs (équipes, événements, fil social, marketplace). Microservices NestJS derrière une gateway APISIX en forward-auth, isolation par <i>structure_id</i>, frontend Next.js 15 / React 19. <b>Stack&nbsp;: NestJS 11 · APISIX · PostgreSQL 17 · Docker.</b></div>
+        </div>
+      </div>
+
+      <div class="job">
+        <div class="jidx">◆</div>
+        <div class="jbody">
+          <div class="jhead"><div class="jtitle">VinBOT</div><div class="jdate">Sourcing IA</div></div>
+          <div class="jmeta">Reconnaissance d'image · Microservices</div>
+          <div class="jdesc">Veille automatisée sur Vinted à partir d'une image de référence (embeddings CLIP en local), scraping Playwright et alertes Telegram ciblées. Workers multi-régions. <b>Stack&nbsp;: NestJS · APISIX · Redis/BullMQ · MinIO · PostgreSQL.</b></div>
+        </div>
+      </div>
+
+    </section>
+
+    <section class="block">
+      <h2 class="h">Formation</h2>
+      <div class="edu">
+        <div class="ebullet">◆</div>
+        <div>
+          <div class="ehead"><div class="etitle">Master — Architecte de Système d'Information</div><div class="edate">2025</div></div>
+          <div class="emeta">ETNA · Développement</div>
+          <div class="esub">Spécialisation Cloud Computing &amp; Micro-services</div>
+        </div>
+      </div>
+      <div class="edu">
+        <div class="ebullet">◆</div>
+        <div>
+          <div class="ehead"><div class="etitle">Baccalauréat</div><div class="edate">2021</div></div>
+          <div class="emeta">Lycée Lucie Aubrac</div>
+          <div class="esub">Spécialités Mathématiques, Sciences de l'ingénieur, Physique-Chimie</div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+</div>
+
+<div class="hint no-print">Astuce : <b>Ctrl/Cmd + P</b> pour exporter en PDF</div>
+
+</body>
+</html>
