@@ -108,4 +108,54 @@
       if (e.key === 'ArrowLeft') step(-1);
     });
   }
+
+  /* --- mobile menu --- */
+  var navToggle = document.getElementById('navToggle');
+  var mobileMenu = document.getElementById('mobileMenu');
+  if (navToggle && mobileMenu) {
+    function setMenu(open) {
+      document.body.classList.toggle('menu-open', open);
+      navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      document.body.style.overflow = open ? 'hidden' : '';
+    }
+    navToggle.addEventListener('click', function () {
+      setMenu(!document.body.classList.contains('menu-open'));
+    });
+    mobileMenu.querySelectorAll('a[href^="#"]').forEach(function (a) {
+      a.addEventListener('click', function () { setMenu(false); });
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') setMenu(false);
+    });
+  }
+
+  /* --- count-up stats --- */
+  var counters = document.querySelectorAll('.stat-cell .n[data-to]');
+  if ('IntersectionObserver' in window && counters.length) {
+    var cio = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        cio.unobserve(e.target);
+        var el = e.target;
+        var to = parseInt(el.getAttribute('data-to'), 10) || 0;
+        var suf = el.querySelector('.suf');
+        var sufHtml = suf ? suf.outerHTML : '';
+        var start = null, dur = 1100;
+        function stepCount(ts) {
+          if (!start) start = ts;
+          var p = Math.min((ts - start) / dur, 1);
+          var eased = 1 - Math.pow(1 - p, 3);
+          el.innerHTML = Math.round(eased * to) + sufHtml;
+          if (p < 1) requestAnimationFrame(stepCount);
+        }
+        requestAnimationFrame(stepCount);
+      });
+    }, { threshold: 0.5 });
+    counters.forEach(function (c) { cio.observe(c); });
+  } else {
+    counters.forEach(function (el) {
+      var suf = el.querySelector('.suf');
+      el.innerHTML = el.getAttribute('data-to') + (suf ? suf.outerHTML : '');
+    });
+  }
 })();
