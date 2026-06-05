@@ -59,6 +59,8 @@
     // stack categories
     cat_lang: 'Languages', cat_front: 'Front-end', cat_back: 'Back-end',
     cat_mobile: 'Mobile', cat_data: 'Data &amp; DevOps',
+    stack_note_tag: 'Always learning',
+    stack_note: "This list isn't fixed — I learn fast and adapt to new technologies, languages or tools as each project requires.",
 
     // formation
     edu1_title: 'Master — Information Systems Architect',
