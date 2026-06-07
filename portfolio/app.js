@@ -158,4 +158,58 @@
       el.innerHTML = el.getAttribute('data-to') + (suf ? suf.outerHTML : '');
     });
   }
+
+  /* --- experience timeline: scroll-fill rail + lit markers --- */
+  var xpList = document.getElementById('xpList');
+  var xpFill = document.getElementById('xpRailFill');
+  if (xpList && xpFill) {
+    var xpItems = Array.prototype.slice.call(xpList.querySelectorAll('.xp'));
+    var ticking = false;
+    function updateRail() {
+      ticking = false;
+      var rect = xpList.getBoundingClientRect();
+      var vh = window.innerHeight;
+      var anchor = vh * 0.5;                 // fill up to the middle of the viewport
+      var raw = (anchor - rect.top) / rect.height;
+      var p = Math.max(0, Math.min(1, raw));
+      xpFill.style.height = (p * 100) + '%';
+      document.documentElement.classList.toggle('xp-active', p > 0.001 && p < 0.999);
+      // light markers whose midpoint is above the fill anchor
+      xpItems.forEach(function (it) {
+        var r = it.getBoundingClientRect();
+        it.classList.toggle('lit', (r.top + r.height * 0.5) <= anchor);
+      });
+    }
+    function onScrollRail() {
+      if (!ticking) { ticking = true; requestAnimationFrame(updateRail); }
+    }
+    addEventListener('scroll', onScrollRail, { passive: true });
+    addEventListener('resize', onScrollRail);
+    updateRail();
+  }
+
+  /* --- project cards: cursor-following "Ouvrir" label --- */
+  var fine = matchMedia('(pointer:fine)').matches;
+  var projCards = document.querySelectorAll('.proj[data-case]');
+  if (fine && projCards.length) {
+    var pl = document.createElement('div');
+    pl.className = 'proj-cursor';
+    pl.innerHTML = '<span data-i18n-cursor>Ouvrir</span> <b>↗</b>';
+    document.body.appendChild(pl);
+    var plOn = false;
+    function moveLabel(e) {
+      pl.style.transform = 'translate(' + e.clientX + 'px,' + e.clientY + 'px)';
+    }
+    projCards.forEach(function (card) {
+      card.addEventListener('pointerenter', function () {
+        var lang = (window.__lang === 'en');
+        pl.querySelector('[data-i18n-cursor]').textContent = lang ? 'Open' : 'Ouvrir';
+        pl.classList.add('on'); plOn = true;
+      });
+      card.addEventListener('pointermove', moveLabel);
+      card.addEventListener('pointerleave', function () {
+        pl.classList.remove('on'); plOn = false;
+      });
+    });
+  }
 })();

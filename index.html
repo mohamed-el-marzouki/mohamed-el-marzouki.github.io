@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr" data-theme="dark" data-density="comfortable" data-effects="full" data-bg="grid" data-cards="bordered" data-cursor="glow" data-grain="on" data-headings="default" data-bodyfont="grotesk" data-radius="sharp">
+<html lang="fr" data-theme="dark" data-density="comfortable" data-effects="full" data-bg="constellation" data-cards="bordered" data-cursor="glow" data-grain="on" data-headings="default" data-bodyfont="grotesk" data-radius="sharp">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -26,8 +26,27 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400;1,6..72,500&family=Syne:wght@500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="portfolio/styles.css" />
+<script>(function(){try{if(sessionStorage.getItem('introV2')==='1')document.documentElement.className+=' intro-skip';}catch(e){}})();</script>
 </head>
 <body>
+
+<!-- ============ INTRO PRELOADER ============ -->
+<div class="intro" id="intro" aria-hidden="true">
+  <div class="intro-grid"></div>
+  <div class="intro-top">
+    <span class="intro-brand mono"><span class="dot"></span>M.A. EL MARZOUKI</span>
+    <span class="intro-loading mono">Chargement</span>
+  </div>
+  <div class="intro-center">
+    <div class="intro-line"><span>Développeur</span></div>
+    <div class="intro-line"><span>Full-Stack <em>&amp; Lead</em></span></div>
+  </div>
+  <div class="intro-bottom">
+    <span class="intro-place mono">Paris · FR</span>
+    <span class="intro-count mono"><span id="introNum">0</span><i>%</i></span>
+  </div>
+  <div class="intro-bar"><i id="introBar"></i></div>
+</div>
 
 <div class="scroll-prog" id="scrollProg"></div>
 <div class="cursor-glow"></div>
@@ -79,27 +98,28 @@
   <div class="hero-grid-bg"></div>
   <div class="hero-aurora"><i></i><i></i><i></i></div>
   <div class="hero-spot"></div>
+  <canvas class="hero-net" id="heroNet"></canvas>
   <canvas class="hero-fx" id="heroFx"></canvas>
   <div class="hero-glow"></div>
   <div class="wrap">
-    <div class="hero-status reveal mono"><span class="live"></span><span data-i18n="hero_status">Disponible · Freelance · Paris, Île-de-France</span></div>
-    <h1 class="reveal" style="--d:60ms">
-      <span class="ln">Mohamed</span>
-      <span class="ln">Anes <span class="accent">El&nbsp;Marzouki</span></span>
+    <div class="hero-status he mono" style="--hd:120ms"><span class="live"></span><span data-i18n="hero_status">Disponible · Freelance · Paris, Île-de-France</span></div>
+    <h1>
+      <span class="ln"><span class="lnw">Mohamed</span></span>
+      <span class="ln"><span class="lnw">Anes <span class="accent">El&nbsp;Marzouki</span></span></span>
     </h1>
     <div class="hero-foot">
-      <div class="hero-role reveal" style="--d:160ms" data-i18n="hero_role">Développeur Full-Stack · Lead</div>
-      <p class="hero-lead reveal" style="--d:220ms" data-i18n="hero_lead">
+      <div class="hero-role he" style="--hd:520ms" data-i18n="hero_role">Développeur Full-Stack · Lead</div>
+      <p class="hero-lead he" style="--hd:600ms" data-i18n="hero_lead">
         Je conçois et livre des applications <strong>web &amp; mobiles</strong>, de l'architecture au déploiement — avec le cap fixé sur la <strong>performance</strong>, la <strong>sécurité</strong> et la qualité du code.
       </p>
     </div>
-    <div class="hero-cta reveal" style="--d:300ms">
+    <div class="hero-cta he" style="--hd:700ms">
       <a href="#projects" class="btn btn-primary" data-magnetic data-i18n="cta_projects">Voir mes projets</a>
       <a href="portfolio/CV-Mohamed-El-Marzouki.pdf" download class="btn" data-i18n="cta_cv"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14"/></svg>Télécharger le CV</a>
       <a href="cv.html" target="_blank" rel="noopener" class="cv-view" data-i18n="cta_cv_view">Voir en ligne ↗</a>
     </div>
   </div>
-  <div class="scroll-cue"><span>Scroll</span><span class="bar"></span></div>
+  <div class="scroll-cue he" style="--hd:900ms"><span>Scroll</span><span class="bar"></span></div>
 </header>
 
 <!-- ============ MARQUEE ============ -->
@@ -162,7 +182,8 @@
       <span class="label mono" data-i18n="sh_xp_label">Parcours</span>
       <h2 data-i18n="sh_xp_title">Expériences</h2>
     </div>
-    <div class="xp-list">
+    <div class="xp-list" id="xpList">
+      <div class="xp-rail" aria-hidden="true"><i id="xpRailFill"></i></div>
 
       <article class="xp reveal">
         <div class="num">01</div>
@@ -609,6 +630,7 @@
 <!-- mount point for tweaks -->
 <div id="tweaks-root"></div>
 
+<script src="portfolio/intro.js"></script>
 <script src="portfolio/image-slot.js"></script>
 <script src="portfolio/app.js"></script>
 <script src="portfolio/effects.js"></script>

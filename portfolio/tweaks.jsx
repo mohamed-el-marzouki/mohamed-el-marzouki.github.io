@@ -8,7 +8,7 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
   "density": "comfortable",
   "radius": "sharp",
   "effects": "full",
-  "background": "grid",
+  "background": "constellation",
   "cards": "bordered",
   "cursor": "glow",
   "grain": "on"
@@ -83,6 +83,7 @@ function PortfolioTweaks() {
         onChange={(v) => setTweak('effects', v)} />
       <TweakSelect label="Fond du hero" value={t.background}
         options={[
+          { value: 'constellation', label: 'Constellation' },
           { value: 'grid', label: 'Grille' },
           { value: 'dots', label: 'Points' },
           { value: 'aurora', label: 'Aurore' },

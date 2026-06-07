@@ -145,9 +145,108 @@
   }
   addEventListener('resize', function () { if (running) resize(); });
 
+  /* ---- hero constellation network (canvas) ---- */
+  var net = document.getElementById('heroNet');
+  var nctx = net ? net.getContext('2d') : null;
+  var nodes = [], nraf = null, nrun = false;
+  var mouse = { x: -9999, y: -9999 };
+  var LINK = 132, MOUSE_LINK = 200;
+
+  function bg() { return root.getAttribute('data-bg') || 'grid'; }
+  function nResize() {
+    if (!net) return;
+    var dpr = Math.min(devicePixelRatio || 1, 2);
+    net.width = net.offsetWidth * dpr;
+    net.height = net.offsetHeight * dpr;
+    nctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    buildNodes();
+  }
+  function buildNodes() {
+    var w = net.offsetWidth, h = net.offsetHeight;
+    var count = Math.round(Math.min(78, Math.max(34, (w * h) / 17000)));
+    nodes = [];
+    for (var i = 0; i < count; i++) {
+      nodes.push({
+        x: Math.random() * w, y: Math.random() * h,
+        vx: (Math.random() - 0.5) * 0.28,
+        vy: (Math.random() - 0.5) * 0.28,
+        r: Math.random() < 0.16 ? 2.1 : 1.2
+      });
+    }
+  }
+  function nLoop() {
+    if (!nrun) return;
+    var w = net.offsetWidth, h = net.offsetHeight;
+    nctx.clearRect(0, 0, w, h);
+    var col = accent();
+    var i, j, a, b, dx, dy, d;
+
+    for (i = 0; i < nodes.length; i++) {
+      a = nodes[i];
+      a.x += a.vx; a.y += a.vy;
+      if (a.x < -20) a.x = w + 20; else if (a.x > w + 20) a.x = -20;
+      if (a.y < -20) a.y = h + 20; else if (a.y > h + 20) a.y = -20;
+
+      // gentle attraction toward cursor
+      dx = mouse.x - a.x; dy = mouse.y - a.y; d = Math.hypot(dx, dy);
+      if (d < MOUSE_LINK && d > 0.1) {
+        a.x += (dx / d) * 0.35; a.y += (dy / d) * 0.35;
+      }
+    }
+
+    // node-to-node links
+    for (i = 0; i < nodes.length; i++) {
+      a = nodes[i];
+      for (j = i + 1; j < nodes.length; j++) {
+        b = nodes[j];
+        dx = a.x - b.x; dy = a.y - b.y; d = Math.hypot(dx, dy);
+        if (d < LINK) {
+          nctx.strokeStyle = hexA(col, (1 - d / LINK) * 0.16);
+          nctx.lineWidth = 1;
+          nctx.beginPath(); nctx.moveTo(a.x, a.y); nctx.lineTo(b.x, b.y); nctx.stroke();
+        }
+      }
+    }
+
+    // cursor links + dots
+    for (i = 0; i < nodes.length; i++) {
+      a = nodes[i];
+      dx = a.x - mouse.x; dy = a.y - mouse.y; d = Math.hypot(dx, dy);
+      var near = d < MOUSE_LINK;
+      if (near) {
+        nctx.strokeStyle = hexA(col, (1 - d / MOUSE_LINK) * 0.5);
+        nctx.lineWidth = 1;
+        nctx.beginPath(); nctx.moveTo(a.x, a.y); nctx.lineTo(mouse.x, mouse.y); nctx.stroke();
+      }
+      nctx.fillStyle = hexA(col, near ? 0.9 : 0.45);
+      nctx.beginPath(); nctx.arc(a.x, a.y, a.r, 0, Math.PI * 2); nctx.fill();
+    }
+
+    nraf = requestAnimationFrame(nLoop);
+  }
+  function startNet() {
+    if (!net || reduce || nrun) return;
+    nrun = true; nResize(); nLoop();
+  }
+  function stopNet() {
+    nrun = false;
+    if (nraf) cancelAnimationFrame(nraf);
+    if (nctx) nctx.clearRect(0, 0, net.offsetWidth, net.offsetHeight);
+  }
+  if (net && fine) {
+    var heroEl = document.querySelector('.hero');
+    (heroEl || window).addEventListener('pointermove', function (e) {
+      var r = net.getBoundingClientRect();
+      mouse.x = e.clientX - r.left; mouse.y = e.clientY - r.top;
+    });
+    (heroEl || window).addEventListener('pointerleave', function () { mouse.x = -9999; mouse.y = -9999; });
+  }
+  addEventListener('resize', function () { if (nrun) nResize(); });
+
   /* ---- public: react to tweak changes ---- */
   window.refreshEffects = function () {
     if (fx() === 'full') startMeteors(); else stopMeteors();
+    if (bg() === 'constellation' && fx() !== 'none') startNet(); else stopNet();
   };
   // initial
   window.refreshEffects();
